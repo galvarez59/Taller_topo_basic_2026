@@ -53,7 +53,7 @@ def ventana_grupo_2():
 # ============================
 def ventana_grupo_3():
     win = tk.Toplevel(root)
-    win.title("Poligono 3")
+    win.title("Poligono_3")
     win.geometry("400x250")
     label = ttk.Label(win, text="Poly 3\nAgrega aquí tu código de filtrado", font=("Segoe UI", 14))
     label.pack(pady=50)
