@@ -67,6 +67,30 @@ def ventana_grupo_3():
     # Pueden eliminar el label anterior cuando agreguen su interfaz.
     # ---------------------------------------------------
 
+
+# ============================
+# ===   VENTANA GRUPO 4    ===
+# ============================
+def Intercepcion_de_coordenadas():
+    win = tk.Toplevel(root)
+    win.title("Intercepcion de coordenadas")
+    win.geometry("400x200")
+
+    label = ttk.Label(
+        win,
+        text="Intercepcion de coordenadas\nAgrega aquí tu código",
+        font=("Segoe UI", 14)
+    )
+    label.pack(pady=50)
+
+    boton_volver = ttk.Button(
+        win,
+        text="Volver al Menú Principal",
+        command=win.destroy
+    )
+    boton_volver.pack(pady=10)
+
+
 # ============ VENTANA PRINCIPAL =============
 root = tk.Tk()
 root.title("Proyecto Polígonos")
@@ -90,5 +114,7 @@ b2.pack(pady=15)
 b3 = ttk.Button(root, text="Poligono 3", style="B3.TButton", command=ventana_grupo_3)
 b3.pack(pady=15)
 
+b4 = ttk.Button(root, text="Intercepcion de coordenadas", style="B3.TButton", command=Intercepcion_de_coordenadas)
+b4.pack(pady=15)
 
 root.mainloop()
