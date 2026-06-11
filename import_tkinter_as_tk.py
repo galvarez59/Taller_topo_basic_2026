@@ -1,95 +1,116 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 
-# ============================
-# ===   VENTANA GRUPO 1    ===
-# ============================
-def ventana_grupo_1():
+# ============================================
+# ===   FUNCIÓN GENERAL PARA CADA VENTANA   ===
+# ============================================
+def abrir_ventana(nombre):
+    """
+    Esta función crea una nueva ventana para cada opción del menú.
+    Recibe como parámetro el nombre de la opción seleccionada.
+    """
+
     win = tk.Toplevel(root)
-    win.title("Poligono 1")
-    win.geometry("400x250")
-    label = ttk.Label(win, text="Poly_1\nAgrega aquí tu código de filtrado", font=("Segoe UI", 14))
-    label.pack(pady=50)
-    # --- Botón para volver al menú principal ---
-    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
-    boton_volver.pack(pady=10) 
-    
-    # -------------- INSTRUCCIONES GRUPO 1 --------------
-    # Aquí pueden importar librerías, crear clases, funciones y widgets
-    # Ejemplo: crear una interfaz propia, botones, canvas, etc.
-    # Pueden eliminar el label anterior cuando agreguen su interfaz.
-    # ---------------------------------------------------
+    win.title(f"Ventana {nombre}")
+    win.geometry("450x300")
+    win.configure(bg="#ecf0f1")
 
-# ===================================
-# ===   VENTANA GRUPO 2 Ejemplo   ===
-# ===================================
-def ventana_grupo_2():
-    # --- IMPORTA AQUI LAS LIBRERIAS QUE NECESITES ---
-    import tkinter as tk
-    from tkinter import messagebox
+    # Título de la ventana secundaria
+    titulo = ttk.Label(
+        win,
+        text=f"Subrutina: {nombre}",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
+    )
+    titulo.pack(pady=30)
 
-    # --- AQUI VA TU LOGICA, FUNCIONES Y CLASES ---
-    # Por ejemplo:
-    def ejemplo_funcion():
-        messagebox.showinfo("Ejemplo", "Esto es un ejemplo para el Poly_2.")
+    # Texto explicativo
+    etiqueta = ttk.Label(
+        win,
+        text=f"Aquí se puede agregar el código de cálculo de {nombre}",
+        font=("Segoe UI", 12),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=10)
 
-    # --- CREA UNA NUEVA VENTANA PARA TU GRUPO ---
-    win = tk.Toplevel(root)
-    win.title("Poligono 2")
-    win.geometry("400x300")
+    # ----------------------------------------
+    # ===   FUNCIÓN DEL BOTÓN CALCULAR      ===
+    # ----------------------------------------
+    def calcular():
+        """
+        Aquí debe ir la lógica de cálculo de cada estudiante o grupo.
+        Por ahora muestra un mensaje de ejemplo.
+        """
+        messagebox.showinfo(
+            "Calcular",
+            f"Se ejecutó la subrutina de cálculo para: {nombre}"
+        )
 
-    # --- Botón para volver al menú principal ---
-    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    # Botón Calcular
+    boton_calcular = ttk.Button(
+        win,
+        text="Calcular",
+        command=calcular
+    )
+    boton_calcular.pack(pady=15)
+
+    # Botón Volver al Menú Principal
+    boton_volver = ttk.Button(
+        win,
+        text="Volver al Menú Principal",
+        command=win.destroy
+    )
     boton_volver.pack(pady=10)
-    
-    
-    # -------------- INSTRUCCIONES GRUPO 3 --------------
-    # Aquí pueden importar librerías, crear clases, funciones y widgets
-    # Ejemplo: crear una interfaz propia, botones, canvas, etc.
-    # Pueden eliminar el label anterior cuando agreguen su interfaz.
-    # ---------------------------------------------------
 
-# ============================
-# ===   VENTANA GRUPO 3    ===
-# ============================
-def ventana_grupo_3():
-    win = tk.Toplevel(root)
-    win.title("Poligono 3")
-    win.geometry("400x250")
-    label = ttk.Label(win, text="Poly 3\nAgrega aquí tu código de filtrado", font=("Segoe UI", 14))
-    label.pack(pady=50)
-    
-    # --- Botón para volver al menú principal ---
-    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
-    boton_volver.pack(pady=10)
-    # -------------- INSTRUCCIONES GRUPO 3 --------------
-    # Aquí pueden importar librerías, crear clases, funciones y widgets
-    # Ejemplo: crear una interfaz propia, botones, canvas, etc.
-    # Pueden eliminar el label anterior cuando agreguen su interfaz.
-    # ---------------------------------------------------
 
-# ============ VENTANA PRINCIPAL =============
+# ==================================
+# ===   VENTANA PRINCIPAL MENÚ    ===
+# ==================================
 root = tk.Tk()
 root.title("Proyecto Polígonos")
-root.geometry("500x500")
+root.geometry("500x650")
 root.configure(bg="#ecf0f1")
 
-banner = ttk.Label(root, text="Filtrado de Nube de Puntos", anchor="center",font=("Segoe UI", 20, "bold"), background="#0984e3", foreground="white")
+# Banner superior
+banner = ttk.Label(
+    root,
+    text="Filtrado de Nube de Puntos",
+    anchor="center",
+    font=("Segoe UI", 20, "bold"),
+    background="#0984e3",
+    foreground="white"
+)
 banner.pack(fill="x", pady=(0, 20))
 
-# 69 text= "esto es editable"
-instruccion = ttk.Label(root, text="Seleccione un Poligono", font=("Segoe UI", 12), background="#ecf0f1")
-instruccion.pack(pady=(10,30))
+# Instrucción
+instruccion = ttk.Label(
+    root,
+    text="Seleccione una opción del menú",
+    font=("Segoe UI", 12),
+    background="#ecf0f1"
+)
+instruccion.pack(pady=(10, 30))
 
-# Botones de cada grupo, Luego del bg= hay un cuadrado con color al apretarlo configuran el color del boton
-b1 = ttk.Button(root, text="Poligono 1", style="B1.TButton", command=ventana_grupo_1)
-b1.pack(pady=15)
+# Lista de opciones del menú
+opciones = [
+    "main",
+    "ayleen",
+    "Harley",
+    "Ignacio",
+    "Rafael",
+    "Wilson",
+    "Andres",
+    "pantoja"
+]
 
-b2 = ttk.Button(root, text="Poligono 2", style="B2.TButton", command=ventana_grupo_2)
-b2.pack(pady=15)
+# Creación automática de los 8 botones
+for nombre in opciones:
+    boton = ttk.Button(
+        root,
+        text=nombre,
+        command=lambda n=nombre: abrir_ventana(n)
+    )
+    boton.pack(pady=10, ipadx=20, ipady=5)
 
-b3 = ttk.Button(root, text="Poligono 3", style="B3.TButton", command=ventana_grupo_3)
-b3.pack(pady=15)
-
-
+# Ejecutar aplicación
 root.mainloop()
