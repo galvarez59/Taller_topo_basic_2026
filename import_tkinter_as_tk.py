@@ -1,65 +1,307 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-# ============================================
-# ===   FUNCIÓN GENERAL PARA CADA VENTANA   ===
-# ============================================
-def abrir_ventana(nombre):
-    """
-    Esta función crea una nueva ventana para cada opción del menú.
-    Recibe como parámetro el nombre de la opción seleccionada.
-    """
-
+# ==================================================
+# ===   SUBRUTINA MAIN                           ===
+# ==================================================
+def ventana_main():
     win = tk.Toplevel(root)
-    win.title(f"Ventana {nombre}")
+    win.title("Ventana main")
     win.geometry("450x300")
     win.configure(bg="#ecf0f1")
 
-    # Título de la ventana secundaria
     titulo = ttk.Label(
         win,
-        text=f"Subrutina: {nombre}",
+        text="Subrutina: main",
         font=("Segoe UI", 18, "bold"),
         background="#ecf0f1"
     )
     titulo.pack(pady=30)
 
-    # Texto explicativo
     etiqueta = ttk.Label(
         win,
-        text=f"Aquí se puede agregar el código de cálculo de {nombre}",
+        text="Aquí main debe colocar su código",
         font=("Segoe UI", 12),
         background="#ecf0f1"
     )
     etiqueta.pack(pady=10)
 
-    # ----------------------------------------
-    # ===   FUNCIÓN DEL BOTÓN CALCULAR      ===
-    # ----------------------------------------
     def calcular():
-        """
-        Aquí debe ir la lógica de cálculo de cada estudiante o grupo.
-        Por ahora muestra un mensaje de ejemplo.
-        """
-        messagebox.showinfo(
-            "Calcular",
-            f"Se ejecutó la subrutina de cálculo para: {nombre}"
-        )
+        # ==========================================
+        # AQUÍ MAIN DEBE COLOCAR SU CÓDIGO
+        # ==========================================
+        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de main")
 
-    # Botón Calcular
-    boton_calcular = ttk.Button(
-        win,
-        text="Calcular",
-        command=calcular
-    )
+    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
     boton_calcular.pack(pady=15)
 
-    # Botón Volver al Menú Principal
-    boton_volver = ttk.Button(
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    boton_volver.pack(pady=10)
+
+
+# ==================================================
+# ===   SUBRUTINA AYLEEN                         ===
+# ==================================================
+def ventana_ayleen():
+    win = tk.Toplevel(root)
+    win.title("Ventana ayleen")
+    win.geometry("450x300")
+    win.configure(bg="#ecf0f1")
+
+    titulo = ttk.Label(
         win,
-        text="Volver al Menú Principal",
-        command=win.destroy
+        text="Subrutina: ayleen",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
     )
+    titulo.pack(pady=30)
+
+    etiqueta = ttk.Label(
+        win,
+        text="Aquí ayleen debe colocar su código",
+        font=("Segoe UI", 12),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=10)
+
+    def calcular():
+        # ==========================================
+        # AQUÍ AYLEEN DEBE COLOCAR SU CÓDIGO
+        # ==========================================
+        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de ayleen")
+
+    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
+    boton_calcular.pack(pady=15)
+
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    boton_volver.pack(pady=10)
+
+
+# ==================================================
+# ===   SUBRUTINA HARLEY                         ===
+# ==================================================
+def ventana_Harley():
+    win = tk.Toplevel(root)
+    win.title("Ventana Harley")
+    win.geometry("450x300")
+    win.configure(bg="#ecf0f1")
+
+    titulo = ttk.Label(
+        win,
+        text="Subrutina: Harley",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
+    )
+    titulo.pack(pady=30)
+
+    etiqueta = ttk.Label(
+        win,
+        text="Aquí Harley debe colocar su código",
+        font=("Segoe UI", 12),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=10)
+
+    def calcular():
+        # ==========================================
+        # AQUÍ HARLEY DEBE COLOCAR SU CÓDIGO
+        # ==========================================
+        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de Harley")
+
+    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
+    boton_calcular.pack(pady=15)
+
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    boton_volver.pack(pady=10)
+
+
+# ==================================================
+# ===   SUBRUTINA IGNACIO                        ===
+# ==================================================
+def ventana_Ignacio():
+    win = tk.Toplevel(root)
+    win.title("Ventana Ignacio")
+    win.geometry("450x300")
+    win.configure(bg="#ecf0f1")
+
+    titulo = ttk.Label(
+        win,
+        text="Subrutina: Ignacio",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
+    )
+    titulo.pack(pady=30)
+
+    etiqueta = ttk.Label(
+        win,
+        text="Aquí Ignacio debe colocar su código",
+        font=("Segoe UI", 12),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=10)
+
+    def calcular():
+        # ==========================================
+        # AQUÍ IGNACIO DEBE COLOCAR SU CÓDIGO
+        # ==========================================
+        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de Ignacio")
+
+    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
+    boton_calcular.pack(pady=15)
+
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    boton_volver.pack(pady=10)
+
+
+# ==================================================
+# ===   SUBRUTINA RAFAEL                         ===
+# ==================================================
+def ventana_Rafael():
+    win = tk.Toplevel(root)
+    win.title("Ventana Rafael")
+    win.geometry("450x300")
+    win.configure(bg="#ecf0f1")
+
+    titulo = ttk.Label(
+        win,
+        text="Subrutina: Rafael",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
+    )
+    titulo.pack(pady=30)
+
+    etiqueta = ttk.Label(
+        win,
+        text="Aquí Rafael debe colocar su código",
+        font=("Segoe UI", 12),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=10)
+
+    def calcular():
+        # ==========================================
+        # AQUÍ RAFAEL DEBE COLOCAR SU CÓDIGO
+        # ==========================================
+        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de Rafael")
+
+    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
+    boton_calcular.pack(pady=15)
+
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    boton_volver.pack(pady=10)
+
+
+# ==================================================
+# ===   SUBRUTINA WILSON                         ===
+# ==================================================
+def ventana_Wilson():
+    win = tk.Toplevel(root)
+    win.title("Ventana Wilson")
+    win.geometry("450x300")
+    win.configure(bg="#ecf0f1")
+
+    titulo = ttk.Label(
+        win,
+        text="Subrutina: Wilson",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
+    )
+    titulo.pack(pady=30)
+
+    etiqueta = ttk.Label(
+        win,
+        text="Aquí Wilson debe colocar su código",
+        font=("Segoe UI", 12),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=10)
+
+    def calcular():
+        # ==========================================
+        # AQUÍ WILSON DEBE COLOCAR SU CÓDIGO
+        # ==========================================
+        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de Wilson")
+
+    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
+    boton_calcular.pack(pady=15)
+
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    boton_volver.pack(pady=10)
+
+
+# ==================================================
+# ===   SUBRUTINA ANDRES                         ===
+# ==================================================
+def ventana_Andres():
+    win = tk.Toplevel(root)
+    win.title("Ventana Andres")
+    win.geometry("450x300")
+    win.configure(bg="#ecf0f1")
+
+    titulo = ttk.Label(
+        win,
+        text="Subrutina: Andres",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
+    )
+    titulo.pack(pady=30)
+
+    etiqueta = ttk.Label(
+        win,
+        text="Aquí Andres debe colocar su código",
+        font=("Segoe UI", 12),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=10)
+
+    def calcular():
+        # ==========================================
+        # AQUÍ ANDRES DEBE COLOCAR SU CÓDIGO
+        # ==========================================
+        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de Andres")
+
+    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
+    boton_calcular.pack(pady=15)
+
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    boton_volver.pack(pady=10)
+
+
+# ==================================================
+# ===   SUBRUTINA PANTOJA                        ===
+# ==================================================
+def ventana_pantoja():
+    win = tk.Toplevel(root)
+    win.title("Ventana pantoja")
+    win.geometry("450x300")
+    win.configure(bg="#ecf0f1")
+
+    titulo = ttk.Label(
+        win,
+        text="Subrutina: pantoja",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
+    )
+    titulo.pack(pady=30)
+
+    etiqueta = ttk.Label(
+        win,
+        text="Aquí pantoja debe colocar su código",
+        font=("Segoe UI", 12),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=10)
+
+    def calcular():
+        # ==========================================
+        # AQUÍ PANTOJA DEBE COLOCAR SU CÓDIGO
+        # ==========================================
+        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de pantoja")
+
+    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
+    boton_calcular.pack(pady=15)
+
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
     boton_volver.pack(pady=10)
 
 
@@ -71,7 +313,6 @@ root.title("Proyecto Polígonos")
 root.geometry("500x650")
 root.configure(bg="#ecf0f1")
 
-# Banner superior
 banner = ttk.Label(
     root,
     text="Filtrado de Nube de Puntos",
@@ -82,7 +323,6 @@ banner = ttk.Label(
 )
 banner.pack(fill="x", pady=(0, 20))
 
-# Instrucción
 instruccion = ttk.Label(
     root,
     text="Seleccione una opción del menú",
@@ -91,26 +331,29 @@ instruccion = ttk.Label(
 )
 instruccion.pack(pady=(10, 30))
 
-# Lista de opciones del menú
-opciones = [
-    "main",
-    "ayleen",
-    "Harley",
-    "Ignacio",
-    "Rafael",
-    "Wilson",
-    "Andres",
-    "pantoja"
-]
+# Botones del menú principal
+b1 = ttk.Button(root, text="main", command=ventana_main)
+b1.pack(pady=10, ipadx=20, ipady=5)
 
-# Creación automática de los 8 botones
-for nombre in opciones:
-    boton = ttk.Button(
-        root,
-        text=nombre,
-        command=lambda n=nombre: abrir_ventana(n)
-    )
-    boton.pack(pady=10, ipadx=20, ipady=5)
+b2 = ttk.Button(root, text="ayleen", command=ventana_ayleen)
+b2.pack(pady=10, ipadx=20, ipady=5)
 
-# Ejecutar aplicación
+b3 = ttk.Button(root, text="Harley", command=ventana_Harley)
+b3.pack(pady=10, ipadx=20, ipady=5)
+
+b4 = ttk.Button(root, text="Ignacio", command=ventana_Ignacio)
+b4.pack(pady=10, ipadx=20, ipady=5)
+
+b5 = ttk.Button(root, text="Rafael", command=ventana_Rafael)
+b5.pack(pady=10, ipadx=20, ipady=5)
+
+b6 = ttk.Button(root, text="Wilson", command=ventana_Wilson)
+b6.pack(pady=10, ipadx=20, ipady=5)
+
+b7 = ttk.Button(root, text="Andres", command=ventana_Andres)
+b7.pack(pady=10, ipadx=20, ipady=5)
+
+b8 = ttk.Button(root, text="pantoja", command=ventana_pantoja)
+b8.pack(pady=10, ipadx=20, ipady=5)
+
 root.mainloop()
