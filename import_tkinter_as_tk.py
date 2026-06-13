@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-import replanteo_coordenadas_topo
 
 # ============================
 # ===   VENTANA GRUPO 1    ===
@@ -8,10 +7,12 @@ import replanteo_coordenadas_topo
 def ventana_grupo_1():
     win = tk.Toplevel(root)
     win.title("Poligono 1")
-    win.geometry("400x350")
-    replanteo_coordenadas_topo.construir_interfaz(win)
+    win.geometry("400x250")
+    label = ttk.Label(win, text="Poly_1\nAgrega aquí tu código de filtrado", font=("Segoe UI", 14))
+    label.pack(pady=50)
     # --- Botón para volver al menú principal ---
-
+    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
+    boton_volver.pack(pady=10) 
     
     # -------------- INSTRUCCIONES GRUPO 1 --------------
     # Aquí pueden importar librerías, crear clases, funciones y widgets
