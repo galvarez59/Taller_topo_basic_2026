@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+import calculo_coordenadas
 
 # ============================
 # ===   VENTANA GRUPO 1    ===
@@ -24,30 +25,7 @@ def ventana_grupo_1():
 # ===   VENTANA GRUPO 2 Ejemplo   ===
 # ===================================
 def ventana_grupo_2():
-    # --- IMPORTA AQUI LAS LIBRERIAS QUE NECESITES ---
-    import tkinter as tk
-    from tkinter import messagebox
-
-    # --- AQUI VA TU LOGICA, FUNCIONES Y CLASES ---
-    # Por ejemplo:
-    def ejemplo_funcion():
-        messagebox.showinfo("Ejemplo", "Esto es un ejemplo para el Poly_2.")
-
-    # --- CREA UNA NUEVA VENTANA PARA TU GRUPO ---
-    win = tk.Toplevel(root)
-    win.title("Poligono 2")
-    win.geometry("400x300")
-
-    # --- Botón para volver al menú principal ---
-    boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
-    boton_volver.pack(pady=10)
-    
-    
-    # -------------- INSTRUCCIONES GRUPO 3 --------------
-    # Aquí pueden importar librerías, crear clases, funciones y widgets
-    # Ejemplo: crear una interfaz propia, botones, canvas, etc.
-    # Pueden eliminar el label anterior cuando agreguen su interfaz.
-    # ---------------------------------------------------
+    calculo_coordenadas.ventana_grupo_2(root)
 
 # ============================
 # ===   VENTANA GRUPO 3    ===
