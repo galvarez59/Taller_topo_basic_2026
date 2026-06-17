@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-
+import numpy as np
 # ==================================================
 # ===   SUBRUTINA MAIN                           ===
 # ==================================================
@@ -253,14 +253,73 @@ def ventana_Andres():
         background="#ecf0f1"
     )
     etiqueta.pack(pady=10)
+       # ==================================================
+# ==================================================
+# ===   SUBRUTINA ANDRES                         ===
+# ==================================================
+# ==================================================
+# ===   SUBRUTINA ANDRES                         ===
+# ==================================================
+def calcular_area_poligono(coordenadas):
+    pts = np.array(coordenadas)
+    x = pts[:, 0]
+    y = pts[:, 1]
+    suma_1 = np.dot(x, np.roll(y, -1))
+    suma_2 = np.dot(y, np.roll(x, -1))
+    return 0.5 * np.abs(suma_1 - suma_2)
+
+def ventana_Andres():
+    win = tk.Toplevel(root)
+    win.title("Ventana Andres - Área de Polígono")
+    win.geometry("450x400")
+    win.configure(bg="#ecf0f1")
+
+    titulo = ttk.Label(
+        win,
+        text="Cálculo de Área (Gauss)",
+        font=("Segoe UI", 18, "bold"),
+        background="#ecf0f1"
+    )
+    titulo.pack(pady=20)
+
+    etiqueta = ttk.Label(
+        win,
+        text="Ingrese coordenadas (E, N) o (X, Y)\nUna por línea, separadas por coma:",
+        justify="center",
+        font=("Segoe UI", 11),
+        background="#ecf0f1"
+    )
+    etiqueta.pack(pady=5)
+
+    texto_ingreso = tk.Text(win, height=8, width=30)
+    texto_ingreso.pack(pady=5)
 
     def calcular():
-        # ==========================================
-        # AQUÍ ANDRES DEBE COLOCAR SU CÓDIGO
-        # ==========================================
-        messagebox.showinfo("Calcular", "Se ejecutó el cálculo de Andres")
+        contenido = texto_ingreso.get("1.0", tk.END).strip()
+        if not contenido:
+            messagebox.showerror("Error", "Ingrese al menos 3 coordenadas.")
+            return
+            
+        lineas = contenido.split('\n')
+        coordenadas = []
+        
+        try:
+            for linea in lineas:
+                if linea.strip():
+                    x, y = linea.split(',')
+                    coordenadas.append((float(x.strip()), float(y.strip())))
+            
+            if len(coordenadas) < 3:
+                messagebox.showerror("Error", "Un polígono necesita al menos 3 vértices.")
+                return
+                
+            area_resultado = calcular_area_poligono(coordenadas)
+            messagebox.showinfo("Resultado", f"El área calculada es:\n{area_resultado:.3f} unidades cuadradas")
+            
+        except ValueError:
+            messagebox.showerror("Error de formato", "Asegúrese de usar el formato X,Y usando solo números.")
 
-    boton_calcular = ttk.Button(win, text="Calcular", command=calcular)
+    boton_calcular = ttk.Button(win, text="Calcular Área", command=calcular)
     boton_calcular.pack(pady=15)
 
     boton_volver = ttk.Button(win, text="Volver al Menú Principal", command=win.destroy)
